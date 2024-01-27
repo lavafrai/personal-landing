@@ -1,61 +1,61 @@
- html {
+html {
     overflow-x: hidden;
- }
- body {
+}
+
+body {
     font-family: 'Source Sans Pro', sans-serif;
-     --main-color: #c77dff;
- }
+    --main-color: #c77dff;
+}
 
- h1 {
+h1 {
     font-weight: bold;
- }
+}
 
- h2 {
- }
+h2 {
+}
 
- h5 {
+h5 {
     font-weight: 600;
- }
+}
 
- p {
-     color: #b3aeba;
-    font-weight: 300;
- }
+p {
+    color: #b3aeba;
+    font-weight: 600;
+}
 
- a {
+a {
     cursor: pointer;
     color: var(--main-color);
     text-decoration: none;
- }
+}
 
- a:hover {
-    text-decoration:none;
+a:hover {
+    text-decoration: none;
     color: var(--main-color);
     opacity: 0.9;
- }
+}
 
- hr {
+hr {
     border-top: 5px solid var(--main-color);
     width: 80px;
     padding-bottom: 20px;
- }
+}
 
 
- .colour-splash {
+.colour-splash {
     color: var(--main-color);
- }
+}
 
- .section-primary span {
+.section-primary span {
     color: var(--main-color);
     font-weight: bolder;
     opacity: 1;
- }
-
+}
 
 
 /* Intro */
- .section-image {
- 	background: #151515 url(/media/header-bg.jpg) no-repeat center center;
+.section-image {
+    background: #151515 url(/media/header-bg.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -64,10 +64,10 @@
     position: relative;
     text-align: center;
     color: #fff;
-    display:table;
- }
+    display: table;
+}
 
- .img-overlay {
+.img-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -75,9 +75,9 @@
     height: 100%;
     background: #111111;
     opacity: .7;
- }
+}
 
- .img-overlay-09 {
+.img-overlay-09 {
     position: absolute;
     top: 0;
     left: 0;
@@ -85,12 +85,12 @@
     height: 100%;
     background: #111111;
     opacity: .9;
- }
+}
 
- .intro {
+.intro {
     vertical-align: middle;
     text-align: center;
-    display:table-cell;
+    display: table-cell;
     -webkit-transform: translateY(-2.1rem);
     -ms-transform: translateY(-2.1rem);
     transform: translateY(-2.1rem);
@@ -98,7 +98,7 @@
 
 .intro .row {
     margin-right: 0;
-    margin-left:0;
+    margin-left: 0;
 }
 
 .intro h1 {
@@ -132,27 +132,26 @@
 }
 
 
-
 /* 03. Social Icons
  * =================================================================== */
 
 .social {
-  margin: 0 10px;
-  padding-top: 1.3em;
-  text-align: center;
-  color: #fff;
-  font-size: 0.9em;
+    margin: 0 10px;
+    padding-top: 1.3em;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9em;
 }
 
 .social a {
-  color: white;
-  text-decoration:none;
-  padding: 2em;
+    color: white;
+    text-decoration: none;
+    padding: 2em;
     transition: all 0.2s;
 }
 
-.social a:hover{
-  opacity: 0.6;
+.social a:hover {
+    opacity: 0.6;
 }
 
 .social-footer {
@@ -170,10 +169,10 @@
 
 /* Icon Font */
 
- .lnr {
+.lnr {
     font-size: 4em !important;
-    color:#fff;
- }
+    color: #fff;
+}
 
 /* Section Styles */
 
@@ -215,8 +214,7 @@ section {
 
 .section-colour hr {
     border-top: 5px solid #fff;
- }
-
+}
 
 
 /* 01. Timeline Styles
@@ -258,89 +256,91 @@ footer p {
  * =================================================================== */
 
 
+/* Mouse Icon
+ * =================================================================== */
+.mouse-icon {
+    transition: all 1s;
+    border: 2px solid #fff;
+    border-radius: 16px;
+    display: block;
+    height: 50px;
+    margin: 100px auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 30px;
+    z-index: 10;
+}
 
-        /* Mouse Icon
-         * =================================================================== */
-        .mouse-icon {
-            transition: all 1s;
-            border: 2px solid #fff;
-            border-radius: 16px;
-            display: block;
-            height: 50px;
-            margin: 100px auto;
-            position: absolute;
-            left: 0;
-            right: 0;
-            width: 30px;
-            z-index: 10;
-        }
-        .mouse-icon .scroll {
-            animation-delay: 0s;
-            animation-duration: 1.2s;
-            animation-iteration-count: infinite;
-            animation-name: scrolling;
-            animation-play-state: running;
-            animation-timing-function: linear;
-        }
-        .mouse-icon .scroll {
-            transition: all 0.3s;
-            background: #fff none repeat scroll 0 0;
-            border-radius: 10px;
-            height: 6px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            top: 6px;
-            width: 6px;
-        }
+.mouse-icon .scroll {
+    animation-delay: 0s;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-name: scrolling;
+    animation-play-state: running;
+    animation-timing-function: linear;
+}
+
+.mouse-icon .scroll {
+    transition: all 0.3s;
+    background: #fff none repeat scroll 0 0;
+    border-radius: 10px;
+    height: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 6px;
+    width: 6px;
+}
 
 
-        .mouse-icon:hover {
-            transform: scale(110%);
-        }
-        @keyframes scrolling {
-        0% {
-            opacity: 0;
-            top: 5px;
-        }
-        40% {
-            opacity: 1;
-            top: 12px;
-        }
-        80% {
-            opacity: 0;
-            top: 25px;
-        }
-        100% {
-            opacity: 0;
-            top: 25px;
-        }
-        }
+.mouse-icon:hover {
+    transform: scale(110%);
+}
 
-        .pad-xl {
-            padding: 200px 0px;
-        }
-
-        .pad-lg {
-            padding: 160px 0px;
-        }
-
-        .pad-sm {
-            padding: 80px 0px;
-        }
-
-        .pad-xs {
-            padding: 30px 0px;
-        }
-
-    .intro-desc {
-        color: white;
+@keyframes scrolling {
+    0% {
+        opacity: 0;
+        top: 5px;
     }
+    40% {
+        opacity: 1;
+        top: 12px;
+    }
+    80% {
+        opacity: 0;
+        top: 25px;
+    }
+    100% {
+        opacity: 0;
+        top: 25px;
+    }
+}
 
-        /* /Mouse Icon
-         * =================================================================== */
+.pad-xl {
+    padding: 200px 0px;
+}
 
- 
+.pad-lg {
+    padding: 160px 0px;
+}
+
+.pad-sm {
+    padding: 80px 0px;
+}
+
+.pad-xs {
+    padding: 30px 0px;
+}
+
+.intro-desc {
+    color: white;
+}
+
+/* /Mouse Icon
+ * =================================================================== */
+
+
 /* Media Queries
  * =================================================================== */
 
@@ -352,7 +352,7 @@ footer p {
 
     .social-footer {
         text-align: center;
-        position:block;
+        position: block;
         text-align: center;
     }
 
@@ -371,7 +371,7 @@ footer p {
         font-size: 1em;
         padding: 0 1px;
 
-}
+    }
 
     .intro h1 {
         font-size: 50px;
@@ -397,9 +397,13 @@ footer p {
     }
 
     footer p {
-    text-align: center;
+        text-align: center;
     }
 
 }
 
+
+.col-md-3 {
+    margin-bottom: 80px;
+}
 
