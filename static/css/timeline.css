@@ -136,17 +136,18 @@ header .social .btn {
     border-radius: 50%;
 }
 
-#timeline .timeline-item .timeline-icon svg {
-    position: relative;
+#timeline .timeline-item .timeline-icon i {
+    /*position: relative;
     top: 14px;
-    left: 14px;
+    left: 14px;*/
+    text-align: center;
 }
 
 #timeline .timeline-item .timeline-content {
     width: 45%;
-    background: #fff;
+    background: rgba(114, 111, 119, 0.1);
     padding: 20px;
-    -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 15px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
@@ -158,6 +159,12 @@ header .social .btn {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+
+#timeline .timeline-item .timeline-content img {
+    width: calc(100% + 40px);
+    max-width: calc(100% + 40px);
+    margin: 0 -20px 10px;
 }
 
 #timeline .timeline-item .timeline-content h2 {
