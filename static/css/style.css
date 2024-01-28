@@ -109,9 +109,8 @@ hr {
     vertical-align: middle;
     text-align: center;
     display: table-cell;
-    -webkit-transform: translateY(-2.1rem);
-    -ms-transform: translateY(-2.1rem);
-    transform: translateY(-2.1rem);
+    position: relative;
+    padding-bottom: 4.2rem;
 }
 
 .intro .row {
@@ -154,11 +153,49 @@ hr {
  * =================================================================== */
 
 .social {
-    margin: 0 10px;
     padding-top: 1.3em;
     text-align: center;
     color: #fff;
     font-size: 0.9em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+#social-header {
+    /*position: sticky;
+    top: 30px;*/
+    transition: all 0.3s ease;
+    /*background-color: #1a1e2100;*/
+    z-index: 11;
+    display: flex;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+#header-title {
+    position: absolute;
+    font-size: 24px;
+    padding-top: 0.8em;
+}
+/*
+.fixed-header > div {
+    margin-left: calc(100% - 40em);
+}
+*/
+.fixed-header {
+    position: fixed;
+    top: 0;
+    padding-top: 7px;
+    padding-bottom: 15px;
+    left: 0;
+    width: 100%;
+    background-color: #110711aa;
+    backdrop-filter: blur(5px);
 }
 
 .social a {
@@ -284,7 +321,7 @@ footer p {
 /* Mouse Icon
  * =================================================================== */
 .mouse-icon {
-    transition: all 1s;
+    transition: all 0.5s;
     border: 2px solid #fff;
     border-radius: 16px;
     display: block;
@@ -387,6 +424,10 @@ footer p {
 
     }
 
+    .social {
+        width: 20em;
+    }
+
     .intro-desc {
         font-size: 0.7em;
         color: white;
@@ -409,9 +450,8 @@ footer p {
     }
 
     #skills {
-        background: #151515 url(/media/IMG_6911.JPG) no-repeat center center;
         background-size: cover;
-        background-position: top center;
+        background: #151515 url(/media/IMG_6911.JPG) no-repeat top center;
 
     }
 }

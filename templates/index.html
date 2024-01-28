@@ -17,7 +17,8 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lavafrai.ru/"/>
-    <meta property="og:description" content="I'm just student from Moscow. I am interested in photography and programming.">
+    <meta property="og:description"
+          content="I'm just student from Moscow. I am interested in photography and programming.">
     <meta property="og:site_name" content="lavafrai.ru">
     <meta property="og:title" content="lava_frai's website"/>
     <meta property="og:image" content="/media/ruina-banner.png">
@@ -47,8 +48,8 @@
             <!-- /col-md-12 -->
         </div>
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+        <div class="row" id="social-anchor"></div>
+        <div class="row" id="social-header">
                 <div class="social">
                     <a href="https://t.me/lavafrai_channel" target="_blank"><i class="fa-brands fa-telegram fa-3x"></i></a>
                     <a href="mailto:lavafrai@yandex.ru"><i class="fa-solid fa-envelope fa-3x"></i></a>
@@ -57,7 +58,6 @@
                             class="fa-brands fa-discord fa-3x"></i></a>
                     <a href="https://www.github.com/lavafrai" target="_blank"><i class="fa fa-github fa-3x"></i></a>
                 </div><!-- /social -->
-            </div><!-- /col-md-8 -->
         </div><!-- /row -->
 
 
@@ -84,11 +84,12 @@
                 <hr>
 
                 <p class="lead">
-                    I'm just student from Moscow. I am interested in photography and programming.
-                    I have small experience in team leading and administration.
-                    Also, I studied in Moscow Programming School
-                    and have developed many pet projects for myself to study.
-                    And now I'm studying in Moscow Aviation Institute to improve my skills and fundamental knowledge.
+                    I am a student from Moscow, interested in photography and programming.
+                    I have some experience in team leading and administration.
+                    I studied at the Moscow Programming School and have developed several pet projects for self-study.
+                    Currently,
+                    I am studying at the Moscow Aviation Institute to further improve my skills and fundamental
+                    knowledge.
                 </p>
             </div><!-- /col-md-6 -->
         </div><!-- / row -->
@@ -159,7 +160,8 @@
 
                 <p>
                     Also i know java. I can use it to develop Android applications, mintcream modes/resource packs and
-                    simple cross-platform cli programs. Of course, I am not competent in this area like in the previous ones,
+                    simple cross-platform cli programs. Of course, I am not competent in this area like in the previous
+                    ones,
                     but it is also significant and worth mentioning.
                 </p>
             </div>
@@ -221,8 +223,10 @@
                             <img src="/media/timeline2.png">
 
                             <p>
-                                Discord bot, which will help you administer your server, contains many helpful utilities and toys.
-                                It was one of my first large projects, where I studied to organize code into many small modules.
+                                Discord bot, which will help you administer your server, contains many helpful utilities
+                                and toys.
+                                It was one of my first large projects, where I studied to organize code into many small
+                                modules.
                             </p>
                         </div>
                     </div>
@@ -245,12 +249,12 @@
 
                             <p>
                                 The engine to render vocabularies on Mi Band 7 smart band.
-                                Now it support only Russian and English words but only because it was only one enough large
+                                Now it support only Russian and English words but only because it was only one enough
+                                large
                                 open dictionary which I found.
                             </p>
                         </div>
                     </div>
-
 
 
                     <div class="timeline-item">
@@ -292,7 +296,8 @@
                             <img src="/media/timeline5.png">
 
                             <p>
-                                Long-term project of AI telegram bot with chat interface and many more auxiliary functions.
+                                Long-term project of AI telegram bot with chat interface and many more auxiliary
+                                functions.
                             </p>
                         </div>
                     </div>
@@ -341,8 +346,10 @@
                 <h2 style="color: #726f77">And of course</h2>
 
                 <p>
-                    If you like my projects and want to support their development or personally me, you can make a small donation using this service.
-                    I try to spend the funds I receive on developing my abilities, if you want your money to go to a specific project,
+                    If you like my projects and want to support their development or personally me, you can make a small
+                    donation using this service.
+                    I try to spend the funds I receive on developing my abilities, if you want your money to go to a
+                    specific project,
                     do not hesitate to write about it in the comments, and it will be fulfilled.
                 </p>
                 <a href="https://pay.cloudtips.ru/p/e930707c" target="_blank">
@@ -389,8 +396,27 @@
 <script>
     window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
 </script>
-<script src="/js/bootstrap.min.js">
+
+<script>
+    $(window).scroll(function () {
+        let social_offset = document.getElementById("social-anchor").getBoundingClientRect().y + window.scrollY - 10
+        console.log(social_offset, window.scrollY);
+
+        if (window.scrollY > 0) {
+            $('.mouse-icon').addClass('transparent');
+        } else {
+            $('.mouse-icon').removeClass('transparent');
+        }
+
+        if (window.scrollY >= social_offset) {
+            $('#social-header').addClass('fixed-header');
+        } else {
+            $('#social-header').removeClass('fixed-header');
+        }
+    });
+
 </script>
+<script src="/js/bootstrap.min.js"></script>
 <script src="/js/scripts.js">
 </script>
 </body>
