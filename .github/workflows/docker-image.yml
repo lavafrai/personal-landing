@@ -44,4 +44,4 @@ jobs:
           username: ${{ secrets.SERVER_USER_LOGIN }}
           password: ${{ secrets.SERVER_USER_PASSWORD }}
           script_stop: true
-          script: bash personal-landing.sh
+          script: bash /deployer/personal-landing.sh
