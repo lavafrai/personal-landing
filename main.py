@@ -14,7 +14,7 @@ def donations():
     return app.redirect(location='/#donation', code=302)
 
 @app.route('/thanks/maiapp')
-def donations():
+def thanks_maiapp():
     return render_template('thanks/maiapp.html')
 
 @app.route('/<path:path>')
