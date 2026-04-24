@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import "line-awesome/dist/line-awesome/css/line-awesome.min.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "lava_frai's website",
+  description = "lavafrai.ru",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+
+    <title>{title}</title>
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/32206a1cbc.js" crossorigin="anonymous"></script>
+
+    <!-- Linear Icons -->
+    <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts: Source Sans Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lavafrai.ru/" />
+    <meta property="og:description" content="I'm just student from Moscow. I am interested in photography and programming." />
+    <meta property="og:site_name" content="lavafrai.ru" />
+    <meta property="og:title" content={title} />
+    <meta property="og:image" content="/media/ruina-banner.png" />
+    <meta name="theme-color" content="#c77dff" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="lavafrai, lava_frai, lava, freelancer, developer" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) { return; }
+        }
+        k = e.createElement(t); a = e.getElementsByTagName(t)[0];
+        k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(96352183, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/96352183" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

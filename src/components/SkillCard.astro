@@ -1,0 +1,37 @@
+---
+interface Props {}
+---
+
+<div class="skill-card text-center flex flex-col items-center">
+    <slot />
+</div>
+
+<style is:global>
+    .skill-card {
+        margin-bottom: 80px;
+    }
+
+    .skill-card h2 {
+        color: #fff;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .skill-card p {
+        color: #ccc;
+        text-align: justify;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .skill-card {
+        max-width: 400px;
+    }
+
+    @media (max-width: 768px) {
+        .skill-card {
+            max-width: 960px;
+        }
+    }
+</style>

@@ -1,0 +1,121 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    label: string;
+    class?: string;
+    color: string;
+}
+
+const { label, class: className, color } = Astro.props;
+---
+
+<button class={(className ?? "") + " donate-copy-button"}>
+    <div class="donate-button" style="margin-top: 20px;">
+        <div class="donate-icon" style={`background: ${color};`}>
+            <slot name="icon" />
+        </div>
+        <div class="donate-label ml-2">
+            {label}
+        </div>
+        <div class="donate-copyable">
+            <slot name="copyable" />
+        </div>
+        <i class="las la-copy donate-label-icon"></i>
+    </div>
+</button>
+
+<script>
+    document
+        .querySelectorAll<HTMLButtonElement>(".donate-copy-button")
+        .forEach((button) => {
+            button.addEventListener("click", async () => {
+                const copyable =
+                    button.querySelector<HTMLElement>(".donate-copyable");
+                const icon =
+                    button.querySelector<HTMLElement>(".donate-label-icon");
+
+                const text = copyable?.innerText.trim();
+                if (!text || !icon) return;
+
+                try {
+                    await navigator.clipboard.writeText(text);
+
+                    icon.classList.remove("la-copy");
+                    icon.classList.add("la-check");
+
+                    setTimeout(() => {
+                        icon.classList.remove("la-check");
+                        icon.classList.add("la-copy");
+                    }, 1500);
+                } catch (error) {
+                    console.error("Failed to copy:", error);
+                }
+            });
+        });
+</script>
+
+<style>
+    button {
+        text-decoration: none;
+        display: block;
+    }
+
+    .donate-button {
+        color: #fff;
+        background-color: #333;
+        border-radius: 0.6rem;
+        font-size: 1.4rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        height: 3rem;
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+    }
+
+    .donate-button:hover {
+        box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+    }
+
+    .donate-icon {
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .donate-label {
+        align-self: center;
+        text-align: left;
+    }
+
+    .donate-copyable {
+        flex-grow: 1;
+        align-self: center;
+        text-align: left;
+        color: #ccc;
+        font-size: 1rem;
+        border-radius: 0.6rem;
+        font-family: "JetBrains Mono", monospace;
+        padding: 0 0.4rem;
+        font-weight: 300;
+
+        flex: 1 1 auto;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .la-check {
+        color: #cfc;
+    }
+
+    .donate-label-icon {
+        align-self: center;
+        margin-right: 0.5rem;
+    }
+</style>

@@ -1,0 +1,240 @@
+---
+import Gmail from 'simple-icons-astro/Gmail';
+import Telegram from 'simple-icons-astro/Telegram';
+import Vk from 'simple-icons-astro/Vk';
+import Discord from 'simple-icons-astro/Discord';
+import GitHub from 'simple-icons-astro/Github';
+---
+
+<section
+    class="section-image hero-section"
+    style="background-attachment: fixed;"
+>
+    <div class="img-overlay"></div>
+    <div class="intro">
+        <div class="intro-content">
+            <h5>Hello I'm</h5>
+            <h1>lava_frai the developer</h1>
+            <p class="intro-desc">
+                <span>Kotlin</span>
+                <span class="colour-splash">•</span>
+                <span>Rust</span>
+                <span class="colour-splash">•</span>
+                <span>TypeScript</span>
+            </p>
+        </div>
+
+        <div id="social-anchor"></div>
+        <div id="social-header">
+            <div class="social">
+                <a href="https://t.me/lavafrai_channel" target="_blank">
+                    <Telegram size="2.5rem" />
+                </a>
+                <a href="mailto:lavafrai@yandex.ru">
+                    <Gmail size="2.5rem" />
+                </a>
+                <!--a href="https://vk.com/lava_frai" target="_blank">
+                    <Vk size="2.5rem" />
+                </a-->
+                <a href="https://discord.com/users/677933625802489889" target="_blank">
+                    <Discord size="2.5rem" />
+                </a>
+                <a href="https://www.github.com/lavafrai" target="_blank">
+                    <GitHub size="2.5rem" />
+                </a>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <a href="#about">
+                <div class="mouse-icon">
+                    <div class="scroll"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener("scroll", () => {
+        const socialAnchor = document.getElementById("social-anchor");
+        const socialHeader = document.getElementById("social-header");
+        const mouseIcon = document.querySelector<HTMLElement>(".mouse-icon");
+
+        if (!socialAnchor || !socialHeader || !mouseIcon) return;
+
+        const socialOffset = socialAnchor.getBoundingClientRect().top + window.scrollY - 10;
+
+        if (window.scrollY > 0) {
+            mouseIcon.classList.add("transparent");
+        } else {
+            mouseIcon.classList.remove("transparent");
+        }
+
+        if (window.scrollY >= socialOffset) {
+            socialHeader.classList.add("fixed-header");
+        } else {
+            socialHeader.classList.remove("fixed-header");
+        }
+    });
+</script>
+
+<style>
+    .img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #111111;
+        opacity: 0.7;
+    }
+
+    .hero-section {
+        padding: 0;
+        background: #151515 url("/media/header-bg.jpg") no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .intro {
+        vertical-align: middle;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .intro-content {
+        margin-bottom: 1rem;
+    }
+
+    .intro h1 {
+        font-weight: 500;
+        font-size: 84px;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .intro h5 {
+        color: #c77dff;
+        font-size: 2rem;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .intro-desc {
+        color: white !important;
+        font-weight: lighter !important;
+        opacity: 0.9;
+    }
+
+    .intro-desc span {
+        font-weight: 400;
+    }
+
+    #social-header {
+        transition: all 0.3s ease;
+        z-index: 11;
+        display: flex;
+    }
+
+    .social {
+        padding-top: 1.3em;
+        text-align: center;
+        color: #fff;
+        font-size: 0.9em;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        transition: all 0.5s ease;
+        gap: 2.5rem;
+    }
+
+    .social a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .social a:hover {
+        opacity: 0.6;
+        color: white;
+    }
+
+    .mouse-icon {
+        transition: all 0.5s;
+        border: 2px solid #fff;
+        border-radius: 16px;
+        display: block;
+        height: 50px;
+        margin: 50px auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 30px;
+        z-index: 10;
+    }
+
+    .mouse-icon .scroll {
+        animation: scrolling 1.2s linear infinite;
+        background: #fff;
+        border-radius: 10px;
+        height: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        top: 6px;
+        width: 6px;
+    }
+
+    .mouse-icon:hover {
+        transform: scale(110%);
+    }
+
+    @keyframes scrolling {
+        0% {
+            opacity: 0;
+            top: 5px;
+        }
+        40% {
+            opacity: 1;
+            top: 12px;
+        }
+        80% {
+            opacity: 0;
+            top: 25px;
+        }
+        100% {
+            opacity: 0;
+            top: 25px;
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+        .social {
+            width: 20em;
+        }
+        .social a {
+            padding: 0.4em;
+            font-size: 0.9em;
+        }
+        .intro-desc {
+            font-size: 0.7em;
+        }
+        .intro h1 {
+            font-size: 50px;
+            padding-top: 15px;
+        }
+    }
+</style>

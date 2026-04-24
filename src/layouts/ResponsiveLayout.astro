@@ -1,0 +1,21 @@
+---
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`responsive-layout ${className}`}>
+    <slot />
+</div>
+
+<style>
+    .responsive-layout {
+        display: flex;
+        flex-direction: column; /* mobile */
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .responsive-layout {
+            flex-direction: row; /* desktop */
+        }
+    }
+</style>

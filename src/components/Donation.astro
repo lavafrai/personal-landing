@@ -1,0 +1,70 @@
+---
+import BitcoinCash from "simple-icons-astro/bitcoincash";
+import DonationLinkMethodButton from "./DonationLinkMethodButton.astro";
+import DonationCopyMethodButton from "./DonationCopyMethodButton.astro";
+import { Icon } from 'astro-icon/components'
+import Ton from "simple-icons-astro/Ton";
+import Tether from "simple-icons-astro/Tether";
+---
+
+<section class="section-primary" id="donation">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-center">
+            <div class="w-full md:w-1/2 text-center">
+                <BitcoinCash size="3.5rem" class="m-auto fill-white" />
+
+                <h2 class="section-title pb-3">Financial support and donations</h2>
+
+                <hr />
+
+                <h2 class="sub-heading">And of course</h2>
+                <div class="h-1"></div>
+                <p>
+                    If you appreciate my projects and would like to support
+                    their development or support me personally, you can make a
+                    small donation using this service. I strive to allocate the
+                    funds I receive towards enhancing my skills, and if you
+                    prefer your donation to be directed to a specific project,
+                    feel free to specify this in the comments, and it will be
+                    fulfilled. I deeply appreciate your support.
+                </p>
+                <DonationLinkMethodButton href="https://pay.cloudtips.ru/p/e930707c" label="CloudTips" color="#6496dc" class="max-w-[80%] m-auto">
+                    <Icon name="cloudtips" size="65%" />
+                </DonationLinkMethodButton>
+                <DonationCopyMethodButton label="Ton:" color="#0098EA" class="w-[80%] m-auto">
+                    <Ton name="" size="65%" slot="icon" />
+                    <span slot="copyable">
+                        UQA2AoComBmDuQ8Q27UaQ9knsjKbwP2onqvcObKitBK40jw9
+                    </span>
+                </DonationCopyMethodButton>
+                <DonationCopyMethodButton label="USDT:" color="#50AF95" class="w-[80%] m-auto">
+                    <Tether name="" size="65%" slot="icon" />
+                    <span slot="copyable">
+                        TBWkaiT4MmrTmGQrCm1QR1qEifmjERLava
+                    </span>
+                </DonationCopyMethodButton>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-title {
+        color: #fff;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    .sub-heading {
+        color: #726f77;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    p {
+        text-align: justify;
+        width: 80%;
+        margin: auto;
+    }
+</style>

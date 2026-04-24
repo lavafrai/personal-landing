@@ -1,0 +1,122 @@
+---
+interface PortfolioItem {
+    title: string;
+    description: string;
+    href: string;
+    tags: string[];
+}
+
+const portfolioItems: PortfolioItem[] = [
+    {
+        title: "maiapp",
+        description: "An application with information and schedules for students and teachers at the Moscow Aviation Institute. 5,000+ active users as of March 2026.",
+        href: "https://maiapp.lavafrai.ru/",
+        tags: ["Kotlin", "Multiplatform"],
+    },
+    {
+        title: "RuinaCouner",
+        description: "A small, funny website that tracks how long a streamer has been offline.",
+        href: "https://ruina.lavafrai.ru/",
+        tags: ["Rust", "TypeScript", "Astro"],
+    },
+    {
+        title: "Vanitron",
+        description: "Vanity address generator for TRON crypto-wallets.",
+        href: "https://github.com/lavafrai/vanitron/",
+        tags: ["Rust", "Crypto", "CLI"],
+    },
+    {
+        title: "ItemPhysic Guns",
+        description: "Minecraft mod, addon for ItemPhysic that fixes rendering of 3D guns from TaCZ and Superb Warfare when dropped.",
+        href: "https://www.curseforge.com/minecraft/mc-mods/itemphysic-guns",
+        tags: ["Kotlin", "Minecraft"],
+    },
+];
+
+---
+
+<section>
+    <div class="flex flex-col items-center section-container">
+        <h2 class="text-3xl! pb-3">Portfolio</h2>
+        <hr />
+
+        <div class="flex flex-col w-full" id="portfolio-list">
+            {
+                portfolioItems.map((item) => (
+                    <div class="portfolio-item">
+                        <a href={item.href} target="_blank">
+                            <div class="flex flex-row justify-between items-center portfolio-item-headline">
+                                <h3>{item.title}</h3>
+                                <div class="portfolio-item-tags">
+                                    {item.tags.map((tag) => (
+                                        <span>{tag}</span>
+                                    ))}
+                                </div>
+                            </div>
+                            <p>
+                                {item.description}
+                            </p>
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+        <p class="pt-8 font-normal!">
+            If you're interested in seeing what I've done and what I&nbsp;can actually do,
+            you can check out my <a href="https://github.com/lavafrai" target="_blank">GitHub</a>
+            and the updated <a href="https://github.com/lavafrai/lavaFrai/tree/main/media" target="_blank">CV</a> that's published there.
+        </p>
+    </div>
+</section>
+
+<style>
+    .portfolio-item {
+        border-bottom: 1px solid #726f77;
+        width: 100%;
+        font-family:
+            JetBrains Mono,
+            ui-monospace,
+            Cascadia Code,
+            Fira Code,
+            monospace;
+        transition: all 0.1s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .portfolio-item:hover {
+        background-color: #ffffff04;
+    }
+
+    .portfolio-item-headline {
+        padding-bottom: 0.5rem;
+    }
+
+    .portfolio-item-tags {
+        color: #726f77;
+        font-size: 0.8rem;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .portfolio-item-tags span {
+        background-color: #ffffff04;
+        padding: 0.2rem 0.4rem;
+        border: 1px solid #ffffff10;
+    }
+
+    .portfolio-item a {
+        padding: 0.5rem;
+    }
+
+    .portfolio-item h3 {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .portfolio-item p {
+        font-weight: 300;
+        font-size: 0.9rem;
+    }
+</style>

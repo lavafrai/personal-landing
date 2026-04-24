@@ -1,0 +1,62 @@
+---
+---
+
+<script>
+    const birthday = new Date("2005-11-03");
+    let age = new Date().getFullYear() - birthday.getFullYear();
+    if (new Date().getMonth() < birthday.getMonth() || (new Date().getMonth() === birthday.getMonth() && new Date().getDate() < birthday.getDate())) {
+        age--;
+    }
+    const ageElement = document.getElementById("age");
+    ageElement!!.textContent = age.toString();
+</script>
+<section id="about">
+    <div class="section-container">
+        <div class="flex justify-center">
+            <div class="w-full text-center flex flex-col items-center">
+                <!--BadgeInfo size="3rem" /-->
+
+                <h2 class="text-3xl! pb-3 text-white!">About Me</h2>
+
+                <hr />
+
+                <div class="description">
+                    <p>
+                        I&nbsp;am a student from Moscow, passionate about photography
+                        and programming. I&nbsp;have experience in team leading and
+                        administration. I&nbsp;graduated from the Moscow Programming
+                        School and completed several personal projects for
+                        self-study. Currently, I&nbsp;am studying at the Moscow
+                        Aviation Institute to further enhance my skills and
+                        fundamental knowledge.
+                    </p>
+                    <p>
+                        Btw i made all the pictures that are used as backgrounds on this site :3
+                    </p>
+                    <p>
+                        I'm <span id="age"></span> years old now, and I honestly don't know what else to write here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #about {
+        color: #726f77;
+    }
+
+    .description {
+        margin-top: 1rem;
+    }
+
+    .description p {
+        color: #b3aeba;
+        text-align: justify;
+        line-height: 1.2;
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding-bottom: 1rem;
+    }
+</style>
