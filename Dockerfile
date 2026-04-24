@@ -1,15 +1,17 @@
-FROM python:3.9.16-alpine3.17
+FROM node:22-alpine AS builder
 
-COPY . /opt/app/
-WORKDIR /opt/app
+WORKDIR /app
 
-RUN apk update
-RUN apk upgrade
-# RUN apk add --no-cache ffmpeg
-# RUN apk add build-base linux-headers
+COPY package*.json ./
+RUN npm ci
 
-RUN python3 -m pip install -r requirements.txt
+COPY . .
+RUN npm run build
 
-# RUN rm -r /opt/tmp
-WORKDIR /opt/app
-CMD python3 main.py
+FROM nginx:1.27-alpine AS runtime
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
